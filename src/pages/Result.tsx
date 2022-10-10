@@ -29,6 +29,10 @@ const Wrapper = styled.div`
   @media (max-width: 380px) {
     width: 100%;
   }
+  // safari only
+  @supports (-webkit-touch-callout: none) {
+    height: -webkit-fill-available;
+  }
 `;
 
 const Title = styled.div`

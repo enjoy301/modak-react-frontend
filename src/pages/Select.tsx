@@ -76,6 +76,10 @@ const Wrapper = styled.div`
   @supports (-webkit-touch-callout: none) {
     height: -webkit-fill-available;
   }
+  // safari only
+  @supports (-webkit-touch-callout: none) {
+    height: -webkit-fill-available;
+  }
 `;
 
 const QNumber = styled.div`
