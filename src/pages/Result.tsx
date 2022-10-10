@@ -18,36 +18,83 @@ const ResultPage = () => {
 export default ResultPage;
 
 const Wrapper = styled.div`
-  width: 400px;
+  width: 380px;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+  color: #000000;
+  @media (max-width: 380px) {
+    width: 100%;
+  }
 `;
 
 const Title = styled.div`
   font-size: 35px;
   font-weight: bold;
-  color: #000000;
   margin-bottom: 10px;
+
+  @media (max-width: 300px) {
+    font-size: 24px;
+  }
+  @media (min-width: 300px) and (max-width: 380px) {
+    font-size: 27px;
+  }
+  @media (min-width: 380px) and (max-width: 500px) {
+    font-size: 30px;
+  }
 `;
 
 const Subtitle = styled.div`
-  font-size: 20px;
-  color: #000000;
+  font-size: 22px;
+
+  @media (max-width: 300px) {
+    font-size: 14px;
+  }
+  @media (min-width: 300px) and (max-width: 380px) {
+    font-size: 16px;
+  }
+  @media (min-width: 380px) and (max-width: 500px) {
+    font-size: 18px;
+  }
 `;
 
 const Image = styled.div`
-  width: 400px;
-  height: 400px;
+  width: 380px;
+  height: 380px;
   background-image: url("https://item.kakaocdn.net/do/bef59207f5155a4eddd632c9a833e80d7154249a3890514a43687a85e6b6cc82");
   background-size: cover;
   background-position: center;
+
+  @media (max-width: 300px) {
+    width: 250px;
+    height: 250px;
+  }
+  @media (min-width: 300px) and (max-width: 380px) {
+    width: 300px;
+    height: 300px;
+  }
+  @media (min-width: 380px) and (max-width: 500px) {
+    width: 350px;
+    height: 350px;
+  }
 `;
 
 const Description = styled.div`
-  font-size: 15px;
-  color: #000000;
+  font-size: 18px;
+
+  @media (max-width: 300px) {
+    font-size: 13px;
+    margin: 0 20px;
+  }
+  @media (min-width: 300px) and (max-width: 380px) {
+    font-size: 15px;
+    margin: 0 24px;
+  }
+  @media (min-width: 380px) and (max-width: 500px) {
+    font-size: 16px;
+    margin: 0 22px;
+  }
 `;
