@@ -20,7 +20,6 @@ export default LandingPage;
 
 /*
   @media (max-width: 380px) {
-    width: 100%;
   }
   @media (min-width: 380px) and (max-width: 500px) {
   }
@@ -36,11 +35,13 @@ const Wrapper = styled.div`
   justify-content: center;
   margin: 0 auto;
   overflow: hidden;
-  min-height: 400px;
-  min-width: 240px;
   @media (max-width: 380px) {
     width: 100%;
   }
+  // safari only
+  @supports (-webkit-touch-callout: none) {
+    height: -webkit-fill-available;
+  }v
 `;
 
 const Title = styled.div`
@@ -48,17 +49,22 @@ const Title = styled.div`
   font-weight: bold;
   color: #000000;
   margin-bottom: 10px;
-  @media (max-width: 380px) {
-    font-size: 32px;
-    margin-top: 20px;
+  @media (max-width: 300px) {
+    font-size: 33px;
+  }
+  @media (min-width: 300px) and (max-width: 380px) {
+    font-size: 35px;
   }
 `;
 
 const Subtitle = styled.div`
   font-size: 20px;
   color: #000000;
-  @media (max-width: 380px) {
-    font-size: 15px;
+  @media (max-width: 300px) {
+    font-size: 16px;
+  }
+  @media (min-width: 300px) and (max-width: 380px) {
+    font-size: 18px;
   }
 `;
 
@@ -68,11 +74,13 @@ const WelcomeImage = styled.div`
   background-image: url("https://item.kakaocdn.net/do/bef59207f5155a4eddd632c9a833e80d7154249a3890514a43687a85e6b6cc82");
   background-size: cover;
   background-position: center;
-  @media (max-width: 380px) {
-    margin-top: auto;
-    margin-bottom: auto;
+  @media (max-width: 300px) {
     width: 250px;
     height: 250px;
+  }
+  @media (min-width: 300px) and (max-width: 380px) {
+    width: 280px;
+    height: 280px;
   }
   @media (min-width: 380px) and (max-width: 500px) {
     width: 300px;
@@ -94,13 +102,19 @@ const StartButton = styled.div`
   &:hover {
     background-color: #444444;
   }
+  @media (max-width: 300px) {
+    height: 40px;
+    font-size: 16px;
+  }
+  @media (min-width: 300px) and (max-width: 380px) {
+    height: 45px;
+    font-size: 18px;
+  }
 `;
 
 const LinkWrapper = styled.div`
   width: 300px;
   @media (max-width: 380px) {
     width: 80%;
-    margin-top: auto;
-    margin-bottom: 20px;
   }
 `;
