@@ -16,6 +16,7 @@ const Progress = styled.progress`
   width: 100%;
   height: 20px;
   appearance: none;
+  margin-bottom: 70px;
   ::-webkit-progress-bar {
     background-color: #dddddd;
     border-radius: 10px;
@@ -24,6 +25,17 @@ const Progress = styled.progress`
     background-color: #000000;
     border-radius: 10px;
   }
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+
+  @media (max-width: 300px) {
+    height: 12px;
+    margin-bottom: 20px;
+  }
+  @media (min-width: 300px) and (max-width: 380px) {
+    height: 15px;
+    margin-bottom: 40px;
+  }
+  @media (min-width: 380px) and (max-width: 500px) {
+    height: 18px;
+    margin-bottom: 60px;
+  }
 `;

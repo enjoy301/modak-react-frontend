@@ -18,14 +18,6 @@ const LandingPage = () => {
 
 export default LandingPage;
 
-/*
-  @media (max-width: 380px) {
-  }
-  @media (min-width: 380px) and (max-width: 500px) {
-  }
-  @media (min-width: 500px) and (max-width: 800px) {
-  }
-*/
 const Wrapper = styled.div`
   width: 380px;
   height: 100vh;
@@ -34,14 +26,13 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  overflow: hidden;
   @media (max-width: 380px) {
     width: 100%;
   }
   // safari only
   @supports (-webkit-touch-callout: none) {
     height: -webkit-fill-available;
-  }v
+  }
 `;
 
 const Title = styled.div`

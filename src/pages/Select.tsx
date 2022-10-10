@@ -19,7 +19,7 @@ const SelectPage = () => {
 
     setTimeout(() => {
       navigate("/result");
-    }, 1000);
+    }, 2000);
   };
 
   const onClickOption = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -51,9 +51,9 @@ const SelectPage = () => {
         </>
       )}
       {isLoading && (
-        <div>
-          <h1>결과 분석 중..</h1>
-        </div>
+        <>
+          <LoadingText>결과 분석 중..</LoadingText>
+        </>
       )}
     </Wrapper>
   );
@@ -62,13 +62,20 @@ const SelectPage = () => {
 export default SelectPage;
 
 const Wrapper = styled.div`
-  width: 400px;
+  width: 380px;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+  @media (max-width: 420px) {
+    width: 90%;
+  }
+  // safari only
+  @supports (-webkit-touch-callout: none) {
+    height: -webkit-fill-available;
+  }
 `;
 
 const QNumber = styled.div`
@@ -77,6 +84,19 @@ const QNumber = styled.div`
   color: #000000;
   margin-bottom: 50px;
   margin-right: auto;
+
+  @media (max-width: 300px) {
+    font-size: 21px;
+    margin-bottom: 20px;
+  }
+  @media (min-width: 300px) and (max-width: 380px) {
+    font-size: 23px;
+    margin-bottom: 30px;
+  }
+  @media (min-width: 380px) and (max-width: 500px) {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
 `;
 
 const Title = styled.div`
@@ -86,6 +106,19 @@ const Title = styled.div`
   margin-bottom: 30px;
   margin-right: auto;
   white-space: pre-wrap;
+
+  @media (max-width: 300px) {
+    font-size: 20px;
+    margin-bottom: 25px;
+  }
+  @media (min-width: 300px) and (max-width: 380px) {
+    font-size: 23px;
+    margin-bottom: 26px;
+  }
+  @media (min-width: 380px) and (max-width: 500px) {
+    font-size: 28px;
+    margin-bottom: 28px;
+  }
 `;
 
 const Option = styled.div`
@@ -104,6 +137,25 @@ const Option = styled.div`
     background-color: #000000;
     color: #ffffff;
   }
+
+  @media (max-width: 300px) {
+    width: 100%;
+    height: 70px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  @media (min-width: 300px) and (max-width: 380px) {
+    width: 100%;
+    height: 75px;
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+  @media (min-width: 380px) and (max-width: 500px) {
+    width: 100%;
+    height: 90px;
+    font-size: 18px;
+    margin-bottom: 18px;
+  }
 `;
 
 const Progress = styled.div`
@@ -113,11 +165,29 @@ const Progress = styled.div`
   color: #dddddd;
   margin-bottom: 5px;
   margin-top: 20px;
+
+  @media (max-width: 300px) {
+    font-size: 10px;
+  }
+  @media (min-width: 300px) and (max-width: 380px) {
+    font-size: 12px;
+  }
+  @media (min-width: 380px) and (max-width: 500px) {
+    font-size: 14px;
+  }
 `;
 
-// const ProgressBar = styled.progress`
-//   width: 100%;
-//   height: 8px;
-//   background-color: #dddddd;
-//   border-radius: 30px;
-// `;
+const LoadingText = styled.div`
+  font-size: 40px;
+  font-weight: bold;
+
+  @media (max-width: 300px) {
+    font-size: 25px;
+  }
+  @media (min-width: 300px) and (max-width: 380px) {
+    font-size: 30px;
+  }
+  @media (min-width: 380px) and (max-width: 500px) {
+    font-size: 35px;
+  }
+`;
